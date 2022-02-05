@@ -2,9 +2,7 @@ package spring.advanced.trace.template;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import spring.advanced.trace.template.code.AbstractTemplate;
-import spring.advanced.trace.template.code.SubClassLogic1;
-import spring.advanced.trace.template.code.SubClassLogic2;
+import spring.advanced.trace.template.code.*;
 
 @Slf4j
 public class TemplateMethodTest {
@@ -41,6 +39,27 @@ public class TemplateMethodTest {
         template1.execute();
 
         AbstractTemplate template2 = new SubClassLogic2();
+        template2.execute();
+    }
+    /**
+     * 템플릿 메서드 패턴, 익명 내부 클래스 사용
+     */
+    @Test
+    void templateMethodV2() {
+        AbstractTemplate template1 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비스니스 로직1 실행");
+            }
+        };
+        template1.execute();
+
+        AbstractTemplate template2 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비스니스 로직2 실행");
+            }
+        };
         template2.execute();
     }
 }
