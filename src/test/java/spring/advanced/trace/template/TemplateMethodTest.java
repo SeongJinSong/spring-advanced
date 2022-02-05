@@ -2,7 +2,9 @@ package spring.advanced.trace.template;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import spring.advanced.trace.template.code.*;
+import spring.advanced.trace.template.code.AbstractTemplate;
+import spring.advanced.trace.template.code.SubClassLogic1;
+import spring.advanced.trace.template.code.SubClassLogic2;
 
 @Slf4j
 public class TemplateMethodTest {
