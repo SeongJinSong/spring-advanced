@@ -1,8 +1,8 @@
-package spring.proxy.decorator;
+package spring.proxy.pureproxy.decorator;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import spring.proxy.decorator.code.*;
+import spring.proxy.pureproxy.decorator.code.*;
 
 @Slf4j
 public class DecoratorPatternTest {

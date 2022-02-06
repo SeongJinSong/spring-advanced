@@ -1,4 +1,4 @@
-package spring.proxy.decorator.code;
+package spring.proxy.pureproxy.decorator.code;
 
 import lombok.extern.slf4j.Slf4j;
 
