@@ -10,6 +10,7 @@ import spring.proxy.config.v1_proxy.ConcreteProxyConfig;
 import spring.proxy.config.v1_proxy.InterfaceProxyConfig;
 import spring.proxy.config.v2_dynamicproxy.DynamicProxyBasicConfig;
 import spring.proxy.config.v2_dynamicproxy.DynamicProxyFilterConfig;
+import spring.proxy.config.v3_proxyfactory.ProxyFactoryConfigV1;
 import spring.proxy.trace.logtrace.LogTrace;
 import spring.proxy.trace.logtrace.ThreadLocalLogTrace;
 
@@ -17,7 +18,8 @@ import spring.proxy.trace.logtrace.ThreadLocalLogTrace;
 //@Import(InterfaceProxyConfig.class)
 //@Import(ConcreteProxyConfig.class)
 //@Import(DynamicProxyBasicConfig.class)
-@Import(DynamicProxyFilterConfig.class)
+//@Import(DynamicProxyFilterConfig.class)
+@Import(ProxyFactoryConfigV1.class)
 @SpringBootApplication(scanBasePackages = "spring.proxy.app") //주의
 public class ProxyApplication {
 
