@@ -6,13 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import spring.aop.order.OrderRepository;
 import spring.aop.order.OrderService;
+import spring.aop.order.aop.AspectV1;
 
 import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest(classes = AopApplication.class)
+@Import(AspectV1.class)
 public class AopTest {
     @Autowired
     OrderService orderService;
