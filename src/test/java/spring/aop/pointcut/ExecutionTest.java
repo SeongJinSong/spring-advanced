@@ -165,9 +165,21 @@ public class ExecutionTest {
         pointcut.setExpression("execution(* *(String, ..))");
         assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
 
-        //2개
-        pointcut.setExpression("execution(* *(String, *))"); //단 두개지만 없는것도 포함됨
+        /**
+         * AspectJExpressionPointcut은 한번 set 하면 변경되지 않아서
+         * 아래 조건이 틀린 조건임에도 true가 성공으로 찍힌ㄷ.ㅏ
+         */
+        //정확히 2개의 파라미터를 받아야 한다.
+        pointcut.setExpression("execution(* *(String, *))");
         assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
     }
+
+    @Test
+    void argsMatchComplex2(){
+        //2개
+        pointcut.setExpression("execution(* *(String, *))"); //단
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isFalse();
+    }
+
 
 }
