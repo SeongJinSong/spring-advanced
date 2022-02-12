@@ -10,11 +10,11 @@ import spring.aop.internalcall.aop.CallLogAspect;
 @Slf4j
 @Import(CallLogAspect.class)
 @SpringBootTest
-class CallServiceV1Test {
-    @Autowired CallServiceV1 callServiceV1;
+class CallServiceV2Test {
+    @Autowired CallServiceV2 callServiceV2;
 
     @Test
     void external(){
-        callServiceV1.external();
+        callServiceV2.external();
     }
 }
