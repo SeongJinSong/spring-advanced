@@ -12,6 +12,7 @@ import spring.aop.order.OrderService;
 import spring.aop.order.aop.AspectV1;
 import spring.aop.order.aop.AspectV2;
 import spring.aop.order.aop.AspectV3;
+import spring.aop.order.aop.AspectV4Pointcut;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -19,7 +20,8 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest(classes = AopApplication.class)
 //@Import(AspectV1.class)
 //@Import(AspectV2.class)
-@Import(AspectV3.class)
+//@Import(AspectV3.class)
+@Import(AspectV4Pointcut.class)
 public class AopTest {
     @Autowired
     OrderService orderService;
